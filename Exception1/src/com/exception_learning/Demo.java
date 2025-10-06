@@ -19,6 +19,8 @@ public class Demo {
 		cs.divide(10,5);
 		System.out.println("Scenario 2 -------");
 		cs.divide(10,0);
+		System.out.println("Scenario 3 -------");
+		cs.divide(10);
 
 	}
 

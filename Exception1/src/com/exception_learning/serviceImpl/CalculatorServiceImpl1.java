@@ -17,7 +17,10 @@ public class CalculatorServiceImpl1 implements CalculatorService {
 			q = array[0]/array[1];
 			System.out.println("The result is " +q);
 		}catch(ArithmeticException c){
-			System.out.println("cannot " +c.getMessage());
+			//System.out.println("cannot " +c.getMessage());
+			System.out.println("cannot divide " + array[0]+" with "+ array[1]);
+		}catch(ArrayIndexOutOfBoundsException c) {
+			System.out.println(c.getMessage());
 		}
 
 	}
