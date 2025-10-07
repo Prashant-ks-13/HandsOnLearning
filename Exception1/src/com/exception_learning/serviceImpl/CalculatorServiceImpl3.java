@@ -1,6 +1,7 @@
 package com.exception_learning.serviceImpl;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import com.exception_learning.service.CalculatorService;
 
@@ -14,7 +15,7 @@ import com.exception_learning.service.CalculatorService;
 public class CalculatorServiceImpl3 implements CalculatorService {
 
 	@Override
-	public void divide(Integer... array) throws IOException {
+	public void divide(Integer... array) throws IOException, SQLException {
 		// TODO Auto-generated method stub
 		int q = 0;
 		if(array[1]==0) {
