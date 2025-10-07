@@ -1,20 +1,22 @@
 package com.exception_learning;
 
 import com.exception_learning.service.CalculatorService;
-import com.exception_learning.serviceImpl.CalculatorServiceImpl1;
+import com.exception_learning.serviceImpl.CalculatorServiceImpl2;
 
 
 
 /**
  * 
  * @author Prashant Singh
+ * @since 06-10-2025
+ * @version 1.0
  */
 
 public class Demo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		CalculatorService cs = new CalculatorServiceImpl1();
+		CalculatorService cs = new CalculatorServiceImpl2();
 		System.out.println("Scenario 1 -------");
 		cs.divide(10,5);
 		System.out.println("Scenario 2 -------");
