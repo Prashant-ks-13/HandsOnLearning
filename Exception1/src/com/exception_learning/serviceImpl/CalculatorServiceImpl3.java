@@ -1,5 +1,7 @@
 package com.exception_learning.serviceImpl;
 
+import java.io.IOException;
+
 import com.exception_learning.service.CalculatorService;
 
 /**
@@ -12,11 +14,11 @@ import com.exception_learning.service.CalculatorService;
 public class CalculatorServiceImpl3 implements CalculatorService {
 
 	@Override
-	public void divide(Integer... array) {
+	public void divide(Integer... array) throws IOException {
 		// TODO Auto-generated method stub
 		int q = 0;
 		if(array[1]==0) {
-			throw new NullPointerException(": Cannot divide "+array[0]+" by "+array[1]);
+			throw new IOException(": Cannot divide "+array[0]+" by "+array[1]);
 		}
 
 		q = array[0] / array[1];

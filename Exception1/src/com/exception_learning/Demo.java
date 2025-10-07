@@ -25,7 +25,7 @@ public class Demo {
 		System.out.println("Scenario 3 -------");
 		cs.divide(10);
 		}catch(Exception ex){
-			System.out.println("Something went wrong " + ex.getMessage());
+			System.out.println("Something went wrong " + ex);
 		}
 
 	}
