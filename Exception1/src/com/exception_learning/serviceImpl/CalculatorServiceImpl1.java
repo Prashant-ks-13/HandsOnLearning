@@ -1,6 +1,10 @@
 package com.exception_learning.serviceImpl;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import com.exception_learning.service.CalculatorService;
+import com.exception_learning.utility.CustomResource;
 
 /**
  * 
@@ -12,10 +16,13 @@ import com.exception_learning.service.CalculatorService;
 public class CalculatorServiceImpl1 implements CalculatorService {
 
 	@Override
-	public void divide(Integer... array) {
+	public void divide(Integer... array) throws IOException, SQLException{
 		// TODO Auto-generated method stub
 		int q = 0;
+		
+		
 		try {
+			
 			q = array[0]/array[1];
 			System.out.println("The result is " +q);
 		}catch(ArithmeticException c){
@@ -29,6 +36,7 @@ public class CalculatorServiceImpl1 implements CalculatorService {
 			System.out.println(ex.getMessage());
 		}finally {
 			System.out.println("------This is the finally Block excecuting--------");
+			
 		}
 
 	}
