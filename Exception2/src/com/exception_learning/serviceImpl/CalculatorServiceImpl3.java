@@ -1,8 +1,8 @@
 package com.exception_learning.serviceImpl;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
+import com.exception_learning.exception.MyCustomException;
 import com.exception_learning.service.CalculatorService;
 import com.exception_learning.utility.CustomResource;
 import com.exception_learning.utility.CustomResource2;
@@ -17,7 +17,7 @@ import com.exception_learning.utility.CustomResource2;
 public class CalculatorServiceImpl3 implements CalculatorService {
 
 	@Override
-	public void divide(Integer... array) throws IOException, SQLException {
+	public void divide(Integer... array) throws MyCustomException {
 		// TODO Auto-generated method stub
 		int q = 0;
 		CustomResource cr = new CustomResource();
@@ -25,7 +25,7 @@ public class CalculatorServiceImpl3 implements CalculatorService {
 		try (cr ; cr2) { // Try with resources.
 			cr.process();
 			if (array[1] == 0) {
-				throw new IOException(": Cannot divide " + array[0] + " by " + array[1]);
+				throw new MyCustomException(": Cannot divide " + array[0] + " by " + array[1]);
 			}
 
 			q = array[0] / array[1];
