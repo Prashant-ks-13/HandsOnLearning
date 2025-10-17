@@ -1,85 +1,42 @@
 package com.jpalearning.ecommerce.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@Table(name = "tbl_products" , schema = "ecommerce" , uniqueConstraints = {
+        @UniqueConstraint(name = "sku_unique",columnNames = "sku")
+})
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "product_sequence")
+    @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence_name", allocationSize = 1)
     private long id;
+    @Column(name = "product_name", nullable = false)
     private String name;
+    @Column(name = "stock_keeping_unit",nullable = false)
     private String sku;
     private String description;
     private BigDecimal price;
+    private boolean active;
     private String imageurl;
+
+    @CreationTimestamp
     private String created;
+    @UpdateTimestamp
     private String lastupdated;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSku() {
-        return sku;
-    }
-
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getImageurl() {
-        return imageurl;
-    }
-
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
-    }
-
-    public String getCreated() {
-        return created;
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
-    }
-
-    public String getLastupdated() {
-        return lastupdated;
-    }
-
-    public void setLastupdated(String lastupdated) {
-        this.lastupdated = lastupdated;
-    }
 }
